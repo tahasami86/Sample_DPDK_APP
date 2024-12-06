@@ -2,11 +2,11 @@
 
  git submodule update --init --recursive
 
- cp add_test_app_parse.patch dpdk/
+ cp dpdk-app-patch.patch dpdk/
 
  cd dpdk/ || { echo "DPDK submodule not found"; exit 1; }
 
- git apply --whitespace=nowarn add_test_app_parse.patch
+ git apply --whitespace=nowarn dpdk-app-patch.patch
 
  meson -Dexamples=all build
 
@@ -19,6 +19,6 @@ cd build/examples/
 ln -sf "$(pwd)/dpdk-test_app_parse" ../../../dpdk-test_app_parse
 
 echo "DPDK and custom application build completed successfully"
-echo "You can now run the application.
+echo "You can now run the application."
 
 
