@@ -2,7 +2,7 @@
 
  git submodule update --init --recursive
 
- cp dpdk-test_app_parse dpdk/
+ cp add_test_app_parse.patch dpdk/
 
  cd dpdk/ || { echo "DPDK submodule not found"; exit 1; }
 
